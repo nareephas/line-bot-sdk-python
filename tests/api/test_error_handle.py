@@ -30,7 +30,7 @@ from linebot.models import (
 
 class TestLineBotApi(unittest.TestCase):
     def setUp(self):
-        self.tested = LineBotApi('channel_secret')
+        self.tested = LineBotApi('d42b9b5dc4df7ad44e9bddd5ee915fc7')
 
     @responses.activate
     def test_error_handle(self):
