@@ -29,7 +29,7 @@ from linebot.models import (
 
 class TestLineBotApi(unittest.TestCase):
     def setUp(self):
-        self.tested = LineBotApi('channel_secret')
+        self.tested = LineBotApi('d42b9b5dc4df7ad44e9bddd5ee915fc7')
 
         self.audio_message = AudioSendMessage(
             original_content_url='https://example.com/original.m4a',
