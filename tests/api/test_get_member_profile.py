@@ -25,7 +25,7 @@ from linebot import (
 
 class TestLineBotApi(unittest.TestCase):
     def setUp(self):
-        self.tested = LineBotApi('channel_secret')
+        self.tested = LineBotApi('d42b9b5dc4df7ad44e9bddd5ee915fc7')
 
     @responses.activate
     def test_get_group_member_profile(self):
@@ -33,8 +33,8 @@ class TestLineBotApi(unittest.TestCase):
             responses.GET,
             LineBotApi.DEFAULT_API_ENDPOINT + '/v2/bot/group/group_id/member/user_id',
             json={
-                "displayName": "LINE taro",
-                "userId": "Uxxxxxxxxxxxxxx...",
+                "displayName": "Bot-test",
+                "userId": "U7a5b489e7bac95734c69d3b254071190",
                 "pictureUrl": "http://obs.line-apps.com/..."
             },
             status=200
@@ -47,8 +47,8 @@ class TestLineBotApi(unittest.TestCase):
         self.assertEqual(
             request.url,
             LineBotApi.DEFAULT_API_ENDPOINT + '/v2/bot/group/group_id/member/user_id')
-        self.assertEqual(profile.display_name, 'LINE taro')
-        self.assertEqual(profile.user_id, 'Uxxxxxxxxxxxxxx...')
+        self.assertEqual(profile.display_name, 'Bot-test')
+        self.assertEqual(profile.user_id, 'U7a5b489e7bac95734c69d3b254071190')
         self.assertEqual(profile.picture_url, 'http://obs.line-apps.com/...')
 
     @responses.activate
@@ -57,8 +57,8 @@ class TestLineBotApi(unittest.TestCase):
             responses.GET,
             LineBotApi.DEFAULT_API_ENDPOINT + '/v2/bot/room/room_id/member/user_id',
             json={
-                "displayName": "LINE taro",
-                "userId": "Uxxxxxxxxxxxxxx...",
+                "displayName": "Bot-test",
+                "userId": "U7a5b489e7bac95734c69d3b254071190",
                 "pictureUrl": "http://obs.line-apps.com/..."
             },
             status=200
@@ -71,8 +71,8 @@ class TestLineBotApi(unittest.TestCase):
         self.assertEqual(
             request.url,
             LineBotApi.DEFAULT_API_ENDPOINT + '/v2/bot/room/room_id/member/user_id')
-        self.assertEqual(profile.display_name, 'LINE taro')
-        self.assertEqual(profile.user_id, 'Uxxxxxxxxxxxxxx...')
+        self.assertEqual(profile.display_name, 'Bot-test')
+        self.assertEqual(profile.user_id, 'U7a5b489e7bac95734c69d3b254071190')
         self.assertEqual(profile.picture_url, 'http://obs.line-apps.com/...')
 
 
